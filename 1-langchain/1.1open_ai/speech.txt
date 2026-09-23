@@ -1,3 +1,14 @@
 Hello is a common word used to greet people.People say hello when they answer the
 phone.You can also use it to get someone's attention.Watch this short video to learn how the word 
 hello became the standard way to answer the phone
+Hello! It looks like you've provided a short phrase: "hello indian text data.
+"If you are looking for specific datasets, natural language processing (NLP) 
+resources, or text data repositories related to Indian languages or 
+the Indian context, I can help you find exactly what you need.
+To help me give you the right resources, could you tell me:What
+ specific languages are you interested in? (e.g., Hindi, Tamil, 
+ English, or multilingual)What is your use case? 
+ (e.g., training an AI model, sentiment analysis, translation, 
+ or text classification)Are you looking for a particular type of text?
+  (e.g., news articles, social media posts, legal documents, or 
+  conversation transcripts)
