@@ -6,6 +6,7 @@ langchain-groq
 langchain-anthropic
 langchain-google-genai
 langchain-text-splitters
+langserve[all]
 
 # ===== LangGraph & LangSmith =====
 langgraph
