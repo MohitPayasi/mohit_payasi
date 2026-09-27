@@ -1,0 +1,14 @@
+{
+    "python.terminal.useEnvFile": true,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.wordBasedSuggestions": "off",
+    "editor.parameterHints.enabled": true,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on",
+    "python.analysis.autoImportCompletions": true
+}
