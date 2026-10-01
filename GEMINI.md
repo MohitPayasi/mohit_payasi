@@ -11,5 +11,5 @@ Jab bhi user kisi `.ipynb` (Jupyter Notebook) file mein kaam kare aur code likhe
    - Agar koi important logic hai toh uska **brief explanation**
 3. Format: Markdown cell mein proper headings (`###`), bullet points, aur code references use karo.
 4. Ye markdown cells **notebook ke andar hi** code cells ke beech insert karo — koi alag file mat banao.
-5. Docstrings **Hindi-English mix** mein likho (user ki preferred language).
+5. Docstrings **simple English** mein likho — short and clean.
 6. Har naye code cell ke liye ek corresponding markdown documentation cell hona chahiye.
