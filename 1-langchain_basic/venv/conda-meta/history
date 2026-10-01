@@ -21,3 +21,49 @@
 +defaults/win-64::xz-5.8.2-h53af0af_0
 +defaults/win-64::zlib-1.3.2-h1c6eee0_0
 # update specs: ['python==3.10']
+==> 2026-09-29 10:53:46 <==
+# cmd: c:\Users\hpvic\anaconda3\Scripts\conda-script.py install -c conda-forge --prefix d:/Mohit_Payasi/langchain/1-langchain_basic/venv ipykernel -y
+# conda version: 25.5.1
+-defaults/win-64::openssl-1.1.1w-h2bbff1b_0
+-defaults/win-64::python-3.10.0-h96c0403_3
++conda-forge/noarch::asttokens-3.0.2-pyhd8ed1ab_0
++conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_1
++conda-forge/noarch::comm-0.2.3-pyhe01879c_0
++conda-forge/noarch::decorator-5.3.1-pyhd8ed1ab_0
++conda-forge/noarch::exceptiongroup-1.3.1-pyhd8ed1ab_0
++conda-forge/noarch::executing-2.2.1-pyhd8ed1ab_0
++conda-forge/noarch::ipykernel-7.3.0-pyh6dadd2b_0
++conda-forge/noarch::ipython-8.37.0-pyha7b4d00_0
++conda-forge/noarch::jedi-0.20.0-pyhcf101f3_0
++conda-forge/noarch::jupyter_client-8.10.0-pyhcf101f3_0
++conda-forge/noarch::jupyter_core-5.9.1-pyh6dadd2b_0
++conda-forge/noarch::matplotlib-inline-0.2.2-pyhd8ed1ab_0
++conda-forge/noarch::nest-asyncio2-1.7.2-pyhcf101f3_0
++conda-forge/noarch::parso-0.8.7-pyhcf101f3_0
++conda-forge/noarch::pickleshare-0.7.5-pyhd8ed1ab_1004
++conda-forge/noarch::platformdirs-4.11.5-pyhcf101f3_0
++conda-forge/noarch::prompt-toolkit-3.0.53-pyha770c72_0
++conda-forge/noarch::pure_eval-0.2.3-pyhd8ed1ab_1
++conda-forge/noarch::pygments-2.21.0-pyhcf101f3_0
++conda-forge/noarch::python-dateutil-2.9.0.post0-pyhe01879c_2
++conda-forge/noarch::python_abi-3.10-9_cp310
++conda-forge/noarch::six-1.17.0-pyhe01879c_1
++conda-forge/noarch::stack_data-0.6.3-pyhd8ed1ab_1
++conda-forge/noarch::traitlets-5.16.1-pyhcf101f3_0
++conda-forge/noarch::typing_extensions-4.16.0-pyhcf101f3_0
++conda-forge/noarch::wcwidth-0.8.3-pyhcf101f3_0
++conda-forge/win-64::debugpy-1.8.21-py310h699e580_1
++conda-forge/win-64::krb5-1.22.2-h719d79b_2
++conda-forge/win-64::libexpat-2.8.5-hac47afa_0
++conda-forge/win-64::liblzma-5.8.2-hfd05255_0
++conda-forge/win-64::libsodium-1.0.22-h6a83c73_3
++conda-forge/win-64::libsqlite-3.53.4-hf5d6505_1
++conda-forge/win-64::openssl-3.6.4-hf411b9b_0
++conda-forge/win-64::psutil-7.2.2-py310h1637853_2
++conda-forge/win-64::python-3.10.20-hc20f281_0_cpython
++conda-forge/win-64::pywin32-312-py310h3efe797_1
++conda-forge/win-64::pyzmq-27.2.0-py310h824d4bc_0
++conda-forge/win-64::tornado-6.5.8-py310h29418f3_0
++conda-forge/win-64::zeromq-4.3.5-h3a581c9_12
+# update specs: ['ipykernel']
+# neutered specs: ['python==3.10.20']
