@@ -1,0 +1,50 @@
+# ===== LangGraph Core =====
+langgraph
+langgraph-checkpoint
+langgraph-checkpoint-sqlite
+
+# ===== LangChain Ecosystem =====
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-groq
+langchain-anthropic
+langchain-google-genai
+
+# ===== LangSmith (Observability) =====
+langsmith
+
+# ===== LLM Providers =====
+openai
+anthropic
+google-generativeai
+groq
+
+# ===== Vector Stores =====
+faiss-cpu
+chromadb
+
+# ===== Embeddings =====
+sentence-transformers
+
+# ===== Tools & Utilities =====
+tavily-python
+wikipedia
+
+# ===== Environment & Config =====
+python-dotenv
+pydantic
+pydantic-settings
+
+# ===== Typing & Async =====
+typing-extensions
+
+# ===== Data =====
+numpy
+pandas
+
+# ===== Dev Tools =====
+jupyter
+ipykernel
+notebook
