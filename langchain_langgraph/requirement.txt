@@ -1,0 +1,39 @@
+# --- Core Frameworks ---
+langchain
+langchain-core
+langgraph
+langsmith
+
+# --- Jupyter Kernel & Notebook ---
+ipykernel
+ipywidgets
+
+# --- Community & Extended Features ---
+langchain-community
+langchain-experimental
+
+# --- LLM Model Providers ---
+langchain-openai          # OpenAI (GPT-4o, etc.)
+langchain-anthropic       # Claude
+langchain-google-genai    # Google Gemini
+langchain-groq            # Groq (Fast Llama-3, etc.)
+langchain-huggingface     # HuggingFace Models
+langchain-ollama          # Local LLMs (Ollama)
+
+# --- Graph Visualization (LangGraph) ---
+grandalf                  # Terminal ascii graph draw karne ke liye
+matplotlib
+
+# --- Search & Agent Tools ---
+tavily-python             # Web search tool for agents
+duckduckgo-search
+wikipedia
+
+# --- Vector Stores & Embeddings ---
+chromadb                  # Chroma Vector DB
+faiss-cpu                 # FAISS (In-memory Vector Search)
+
+# --- Utilities & Env ---
+python-dotenv             # .env file load karne ke liye
+pydantic
+tiktoken                  # OpenAI token counter
