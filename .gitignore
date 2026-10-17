@@ -1,5 +1,6 @@
 .env
 venv/
+.venv/
 google-cloud-sdk/
 __pycache__/
 *.pyc
