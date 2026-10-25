@@ -1,13 +1,25 @@
+# Environment variables
 .env
+*.env
+
+# Virtual environments
 venv/
 .venv/
-google-cloud-sdk/
+
+# Python-generated files
 __pycache__/
-*.pyc
+*.py[oc]
+*.pyd
 .ipynb_checkpoints/
+build/
+dist/
+wheels/
+*.egg-info
+
+# Binaries & dependencies
+google-cloud-sdk/
 supercloud-16x16.ico
 uninstaller.exe
-*.pyd
 *.dll
 *.exe
 *.pdb
