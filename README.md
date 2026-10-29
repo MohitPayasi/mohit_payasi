@@ -12,6 +12,11 @@ langchain/
 │   ├── 1.1open_ai/             # Chroma, FAISS, OpenAI & HuggingFace Embeddings, Document Loaders
 │   └── 1.2ollama/              # Local LLMs & Embeddings via Ollama
 │
+├── langchain_langgraph/        # End-to-End RAG, Embeddings, Ingestion & LangGraph Checkpointing
+│   ├── introduction/           # Document Ingestion, HF Embeddings & LangGraph Memory
+│   ├── section_6/              # End-to-End Project with Groq LLM & FAISS
+│   └── README.md               # Dedicated documentation with direct notebook links
+│
 ├── langraphproject/            # Production Agent Systems built with LangGraph
 │   ├── main.py                 # Standalone StateGraph Agent with Google Gemini & LangSmith
 │   └── basic_chat/             # LangGraph Nodes, Edges, State & LangSmith Tracing/Monitoring
@@ -46,17 +51,24 @@ langchain/
 - **Embeddings**: Vector embeddings generation using OpenAI (`text-embedding-3-small`) and HuggingFace (`sentence-transformers/all-MiniLM-L6-v2`).
 - **Vector Databases**: Semantic search indexing and query retrieval using **Chroma** and **FAISS**.
 
-### 2. `langraphproject/`
+### 2. `langchain_langgraph/`
+- **Comprehensive Guide & Links**: Check out [`langchain_langgraph/README.md`](./langchain_langgraph/README.md) for direct notebook access.
+- **Data Ingestion & Splitting**: PDF, text, web scraping (`WebBaseLoader`), and Wikipedia loading coupled with recursive character text chunking.
+- **Embeddings & FAISS**: Open-source HuggingFace Sentence Transformers with local FAISS persistence and vector similarity retrieval.
+- **LangGraph Checkpointing & Groq**: Chat Groq setup with `langgraph.checkpoint.memory.MemorySaver` thread configurations.
+- **End-to-End RAG Project (Section 6)**: Production RAG pipeline chaining Groq LLM, FAISS retriever, ChatPromptTemplate, and StrOutputParser.
+
+### 3. `langraphproject/`
 - **LangGraph StateGraph**: Cyclic and stateful agent architecture using `TypedDict` for shared state management.
 - **Node & Edge Routing**: Connecting graph nodes via direct edges and conditional edges.
 - **Dynamic Model Initialization**: Model provider switching with `init_chat_model(model='openai/gpt-oss-20b', model_provider='groq')`.
 - **Observability**: Full tracing, latency monitoring, and token debugging using **LangSmith**.
 
-### 3. `practice/`
+### 4. `practice/`
 - **FastAPI & LangServe**: Exposing LangChain chains as RESTful endpoints with automatic OpenAPI documentation and interactive playground (`/rag_chain/playground`).
 - **Encoding & Compatibility**: Handling Windows UTF-8 encoding issues gracefully during server boot.
 
-### 4. `project/` & `project/project_1/`
+### 5. `project/` & `project/project_1/`
 - **LCEL Composition**: Creating declarative pipelines using the pipe operator (`prompt | model | parser`).
 - **Structured Output**: Extracting structured data directly into Pydantic models.
 - **Tool Calling**: Equipping models with external tools via `@tool` decorators.
