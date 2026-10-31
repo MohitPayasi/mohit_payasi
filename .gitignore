@@ -1,28 +1,59 @@
-# Environment variables
+# Environment variables & secrets
 .env
 *.env
+!.env.example
 
 # Virtual environments
 venv/
 .venv/
+env/
+ENV/
+**/venv/
+**/.venv/
+**/env/
 
-# Python-generated files
+# Python cache & compiled bytecode
 __pycache__/
-*.py[oc]
+*.py[cod]
+*$py.class
 *.pyd
-.ipynb_checkpoints/
+
+# Distribution / packaging
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
+develop-eggs/
 
-# Binaries & dependencies
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Vector database local persistence & binaries
+**/croma_db/
+**/chroma_db/
+*.sqlite3
+*.bin
+faiss_index/
+**/faiss_index/
+
+# Cloud SDK & installers
 google-cloud-sdk/
+**/google-cloud-sdk/
 supercloud-16x16.ico
 uninstaller.exe
+install_mode
+conda-meta/
+
+# Binary & OS files
 *.dll
 *.exe
 *.pdb
 *.lib
 *.ico
-conda-meta/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Nested duplicate clone folder (prevent accidental submodules)
+/langchain/

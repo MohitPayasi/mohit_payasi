@@ -6,15 +6,16 @@ Welcome to the **LangChain & LangGraph** section of the repository! This directo
 
 ## 📌 Direct GitHub Notebook Links
 
-Agar aap GitHub par direct kisi bhi notebook ya folder ko access karna chahte hain, toh neeche diye gaye direct links use kar sakte hain:
+Quickly access individual notebooks and modules:
 
-| Topic / Module | Notebook / File | Direct GitHub Link |
+| Topic / Module | Notebook / File | Description |
 | :--- | :--- | :--- |
-| **Data Ingestion & Splitting** | `data._ingestion.ipynb` | [Open Ingestion Notebook](https://github.com/MohitPayasi/mohit_payasi/blob/main/langchain_langgraph/introduction/data._ingestion.ipynb) |
-| **Embeddings & FAISS Retriever** | `embedding.ipynb` | [Open Embedding Notebook](https://github.com/MohitPayasi/mohit_payasi/blob/main/langchain_langgraph/introduction/embedding.ipynb) |
-| **LangChain Core & Memory** | `langchain.ipynb` | [Open LangChain Notebook](https://github.com/MohitPayasi/mohit_payasi/blob/main/langchain_langgraph/introduction/langchain.ipynb) |
-| **Section 6: End-to-End RAG Project** | `project.ipynb` | [Open Section 6 Project](https://github.com/MohitPayasi/mohit_payasi/blob/main/langchain_langgraph/section_6/project.ipynb) |
-| **Environment Dependencies** | `requirement.txt` | [View Requirements](https://github.com/MohitPayasi/mohit_payasi/blob/main/langchain_langgraph/requirement.txt) |
+| **Data Ingestion & Splitting** | [`data_ingestion.ipynb`](./introduction/data_ingestion.ipynb) | Document loaders (PDF, Web, Text, Wiki) & chunking strategies |
+| **Embeddings & FAISS** | [`embedding.ipynb`](./introduction/embedding.ipynb) | HuggingFace MiniLM embeddings & FAISS vector search |
+| **LangChain Core & Memory** | [`langchain.ipynb`](./introduction/langchain.ipynb) | ChatGroq models & `MemorySaver` thread checkpointing |
+| **Section 6: End-to-End RAG Project** | [`project.ipynb`](./section_6/project.ipynb) | Production RAG pipeline with Groq LLM & FAISS retriever |
+| **Section 7: LCEL Basics** | [`simple_llm_lcel.ipynb`](./section_7/simple_llm_lcel.ipynb) | Modern LangChain Expression Language (LCEL) & Runnable chains |
+| **Dependencies** | [`requirement.txt`](./requirement.txt) | Environment requirements for this section |
 
 ---
 
@@ -23,7 +24,7 @@ Agar aap GitHub par direct kisi bhi notebook ya folder ko access karna chahte ha
 ```text
 langchain_langgraph/
 ├── introduction/
-│   ├── data._ingestion.ipynb     # TextLoader, PyPDFLoader, WebBaseLoader, WikipediaLoader & Text Splitters
+│   ├── data_ingestion.ipynb      # TextLoader, PyPDFLoader, WebBaseLoader, WikipediaLoader & Text Splitters
 │   ├── embedding.ipynb           # HuggingFace Embeddings, SentenceTransformer & FAISS Vector Indexing
 │   ├── langchain.ipynb           # ChatGroq, Message types & LangGraph MemorySaver checkpointing
 │   └── faiss_index/              # Serialized FAISS index files (index.faiss, index.pkl)
@@ -32,78 +33,54 @@ langchain_langgraph/
 │   ├── project.ipynb             # Complete End-to-End RAG Chain with Groq LLM & FAISS Retrieval
 │   └── faiss_index/              # Project specific persistent FAISS vector store
 │
+├── section_7/
+│   └── simple_llm_lcel.ipynb     # Declarative pipelines with LangChain Expression Language (LCEL)
+│
 ├── requirement.txt               # All required dependencies
-├── .env.example                  # Template for API keys
-└── README.md                     # Documentation with direct links
+└── README.md                     # Section documentation
 ```
 
 ---
 
 ## 🚀 Detailed Module Breakdown
 
-### 1. `introduction/data._ingestion.ipynb`
+### 1. `introduction/data_ingestion.ipynb`
 - **Document Loaders**:
-  - `TextLoader`: Local `.txt` files load karne ke liye.
-  - `PyPDFLoader`: PDF documents ko extract aur parse karne ke liye.
-  - `WebBaseLoader`: Web pages se content scrape karke document create karne ke liye.
-  - `WikipediaLoader`: Wikipedia topics se seedha information load karne ke liye.
+  - `TextLoader`: Local `.txt` files parsing.
+  - `PyPDFLoader`: PDF documents parsing and page extraction.
+  - `WebBaseLoader`: Web scraping and converting web content into LangChain Documents.
+  - `WikipediaLoader`: Direct Wikipedia querying and document construction.
 - **Text Splitting**:
-  - `CharacterTextSplitter` aur `RecursiveCharacterTextSplitter` ka use karke documents ko meaningful chunks me divide karna with `chunk_size` aur `chunk_overlap`.
+  - `CharacterTextSplitter` & `RecursiveCharacterTextSplitter` with tuned `chunk_size` and `chunk_overlap`.
 
 ### 2. `introduction/embedding.ipynb`
 - **Embeddings**:
-  - HuggingFace open-source sentence-transformer embeddings (`sentence-transformers/all-MiniLM-L6-v2`) ka integration.
+  - HuggingFace open-source sentence-transformer embeddings (`sentence-transformers/all-MiniLM-L6-v2`).
 - **Vector Storage**:
-  - **FAISS** (Facebook AI Similarity Search) ke sath dense vectors ko index aur locally persist (`faiss_index/`) karna.
+  - **FAISS** (Facebook AI Similarity Search) dense vector indexing and local disk persistence.
 - **Retriever Interface**:
-  - LangChain `as_retriever()` interface ke through semantic search queries run karna.
+  - LangChain `as_retriever()` for semantic vector search queries.
 
 ### 3. `introduction/langchain.ipynb`
-- **Groq Integration**:
-  - Ultra-fast inference with `ChatGroq`.
-- **Core Message Schema**:
-  - `HumanMessage`, `AIMessage`, aur `SystemMessage` ke structured conversation flows.
-- **State Checkpointing**:
-  - `langgraph.checkpoint.memory.MemorySaver` ka use karke thread-based conversation memory configure karna (`thread_id`).
+- **ChatGroq Integration**: Fast inference with models like `mixtral-8x7b-32768` and `llama-3.3-70b-versatile`.
+- **LangGraph Checkpointing**: State persistence and thread management with `MemorySaver`.
 
-### 4. `section_6/project.ipynb`
-- **End-to-End RAG Pipeline**:
-  - Groq LLM (`ChatGroq`) ke sath ChatPromptTemplate, FAISS Retriever, aur `StrOutputParser` ko LCEL (`|`) pipe operator ke through ek unified chain me tie karna.
+### 4. `section_6/project.ipynb` (End-to-End RAG Project)
+- **Production RAG Architecture**:
+  - Question Answering system combining `ChatGroq`, `ChatPromptTemplate`, `FAISS`, and `StrOutputParser`.
+  - Dynamic context passing through retrieved vector chunks.
+
+### 5. `section_7/simple_llm_lcel.ipynb` (LCEL)
+- **LangChain Expression Language**:
+  - Pipe operator syntax (`prompt | model | parser`).
+  - Standard `Runnable` methods: `invoke()`, `batch()`, `stream()`.
+  - Streamlined pipeline composition without legacy chain overhead.
 
 ---
 
-## ⚙️ How to Setup & Run
+## ⚙️ Quick Start
 
-### 1. Virtual Environment Setup
 ```bash
-# langchain_langgraph folder ke andar jayein
 cd langchain_langgraph
-
-# Virtual environment banayein
-python -m venv .venv
-
-# Environment activate karein (Windows PowerShell)
-.venv\Scripts\Activate.ps1
-```
-
-### 2. Install Dependencies
-```bash
 pip install -r requirement.txt
 ```
-
-### 3. Environment Variables
-Folder ke andar `.env` file banayein aur apni API keys daalein:
-```env
-GROQ_API_KEY=your_groq_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-LANGCHAIN_API_KEY=your_langsmith_api_key_here
-LANGCHAIN_TRACING_V2=true
-```
-
----
-
-## 🔗 Repository Navigation
-- 🏠 [Root Repository Overview](https://github.com/MohitPayasi/mohit_payasi)
-- 📚 [LangChain Basics](../1-langchain_basic/README.md)
-- 🤖 [LangGraph Project](../langraphproject/README.md)
-

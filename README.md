@@ -1,115 +1,181 @@
-# 🦜🔗 LangChain & LangGraph Mastery Repository
+# 🧠 AI Engineering & LLM Systems: LangChain, LangGraph & Machine Learning
 
-Welcome to the **LangChain & LangGraph** learning and development repository by **Mohit Payasi**. This repository contains hands-on implementations, end-to-end architectures, experiments, and production-ready code covering the entire modern LLM application development lifecycle.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![LangChain](https://img.shields.io/badge/🦜🔗_LangChain-0.3+-darkgreen.svg)](https://python.langchain.com/)
+[![LangGraph](https://img.shields.io/badge/🕸️_LangGraph-StateGraph-orange.svg)](https://langchain-ai.github.io/langgraph/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-teal.svg)](https://fastapi.tiangolo.com/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> A modular, hands-on repository containing production-grade architectures, agentic workflows, declarative LCEL pipelines, RAG systems, and fundamental Machine Learning algorithms.
 
 ---
 
-## 🗂️ Repository Structure Overview
+## 📑 Table of Contents
+
+- [🗂️ Repository Architecture](#️-repository-architecture)
+- [🧩 Modules Overview](#-modules-overview)
+  - [1. LangChain Fundamentals (`1-langchain_basic/`)](#1-langchain-fundamentals-1-langchain_basic)
+  - [2. End-to-End RAG & LCEL (`langchain_langgraph/`)](#2-end-to-end-rag--lcel-langchain_langgraph)
+  - [3. Agentic Systems with LangGraph (`langraphproject/`)](#3-agentic-systems-with-langgraph-langraphproject)
+  - [4. Advanced LangChain Features (`project/`)](#4-advanced-langchain-features-project)
+  - [5. API Serving & Deployment (`practice/`)](#5-api-serving--deployment-practice)
+  - [6. Machine Learning Foundations (`Machine_learning/`)](#6-machine-learning-foundations-machine_learning)
+- [⚡ Quick Start & Setup](#-quick-start--setup)
+- [🔑 Environment Variables](#-environment-variables)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [👤 Author](#-author)
+
+---
+
+## 🗂️ Repository Architecture
 
 ```text
-langchain/
-├── 1-langchain_basic/          # Fundamentals: Ingestion, Text Splitting, Embeddings & Vector DBs
-│   ├── 1.1open_ai/             # Chroma, FAISS, OpenAI & HuggingFace Embeddings, Document Loaders
-│   └── 1.2ollama/              # Local LLMs & Embeddings via Ollama
+mohit_payasi/
+├── 1-langchain_basic/          # Fundamentals: Ingestion, Chunking, Embeddings & Vector DBs
+│   ├── 1.1open_ai/             # Chroma, FAISS, OpenAI & HuggingFace Embeddings
+│   ├── 1.2ollama/              # Local LLMs & Embeddings via Ollama
+│   └── README.md
 │
-├── langchain_langgraph/        # End-to-End RAG, Embeddings, Ingestion & LangGraph Checkpointing
+├── langchain_langgraph/        # End-to-End RAG, Embeddings, Ingestion & LCEL
 │   ├── introduction/           # Document Ingestion, HF Embeddings & LangGraph Memory
-│   ├── section_6/              # End-to-End Project with Groq LLM & FAISS
-│   └── README.md               # Dedicated documentation with direct notebook links
+│   ├── section_6/              # Production RAG pipeline with Groq LLM & FAISS
+│   ├── section_7/              # Declarative LCEL (LangChain Expression Language) Chains
+│   └── README.md
 │
 ├── langraphproject/            # Production Agent Systems built with LangGraph
-│   ├── main.py                 # Standalone StateGraph Agent with Google Gemini & LangSmith
-│   └── basic_chat/             # LangGraph Nodes, Edges, State & LangSmith Tracing/Monitoring
+│   ├── basic_chat/             # StateGraph Nodes, Edges, State & LangSmith Observability
+│   ├── main.py                 # Standalone StateGraph Agent with Gemini & LangSmith
+│   └── README.md
+│
+├── project/                    # Advanced LangChain Core Features
+│   ├── project_1/              # Core Blocks: Tools, Middleware, Structured Output, Streaming
+│   └── README.md
 │
 ├── practice/                   # Deployment, Web APIs & Serving
 │   ├── chat_bot.py             # FastAPI + LangServe API server for LCEL chains
 │   ├── fast_api.py             # FastAPI service with Windows UTF-8 banner fix
 │   ├── chatbot.ipynb           # Interactive prompt & model testing
-│   └── test.ipynb              # Component tests
+│   └── README.md
 │
-└── project/                    # Advanced LangChain Core Features
-    ├── chatbot.ipynb           # Chat model comparisons & message schema experiments
-    ├── cloud_env.bat           # Environment configuration script
-    └── project_1/              # Core building blocks: LCEL, Tools, Middleware, Structured Output
-        ├── langchain_v1.ipynb  # LangChain core syntax & chain composition
-        ├── messages.ipynb      # Message roles (Human, AI, System, Tool)
-        ├── middle_ware.ipynb   # Lifecycle callbacks & middleware interception
-        ├── middleware_notes.md # Deep dive into LangChain callback architecture
-        ├── model_integration.ipynb # Multi-provider setups (Groq, OpenAI, Google)
-        ├── streaming_batch.ipynb   # Streaming responses (.stream) & batch processing (.batch)
-        ├── structureoutput.ipynb   # Typed schemas with Pydantic & with_structured_output
-        └── tools_creation.ipynb    # Custom tool definitions (@tool) & function calling
+├── Machine_learning/           # Fundamental ML & Data Science Notebooks
+│   ├── class_2.ipynb           # Descriptive Statistics & Data Summaries
+│   ├── class_3.ipynb           # Exploratory Data Analysis (EDA) & Seaborn
+│   ├── class_4.ipynb           # Feature Engineering & Categorical Encoding
+│   ├── class_5.ipynb           # Outlier Detection, Boxplots & Z-Score Analysis
+│   ├── class_6.ipynb           # Simple Linear Regression
+│   ├── class_7.ipynb           # Multiple Linear Regression & Error Metrics
+│   └── README.md
+│
+├── scripts/                    # Automation & developer utility scripts
+│   └── auto_commit.ps1         # Periodic sync utility
+│
+├── .env.example                # Template for LLM and Observability credentials
+├── pyproject.toml              # Unified package configuration
+├── requirements.txt            # Project dependencies
+└── README.md                   # Repository overview
 ```
 
 ---
 
-## 🚀 Key Modules & What Has Been Done
+## 🧩 Modules Overview
 
-### 1. `1-langchain_basic/`
-- **Data Ingestion**: Loading PDFs, text documents, and web pages via LangChain Document Loaders (`PyPDFLoader`, `TextLoader`, `WebBaseLoader`).
-- **Text Chunking**: Chunking strategy comparisons using `CharacterTextSplitter` and `RecursiveCharacterTextSplitter`.
-- **Embeddings**: Vector embeddings generation using OpenAI (`text-embedding-3-small`) and HuggingFace (`sentence-transformers/all-MiniLM-L6-v2`).
-- **Vector Databases**: Semantic search indexing and query retrieval using **Chroma** and **FAISS**.
+### 1. LangChain Fundamentals (`1-langchain_basic/`)
+* **Document Loaders**: `PyPDFLoader`, `TextLoader`, `WebBaseLoader` for unstructured data parsing.
+* **Text Chunking**: Comparisons between `CharacterTextSplitter` and `RecursiveCharacterTextSplitter`.
+* **Embedding Providers**: OpenAI (`text-embedding-3-small`) and open-source HuggingFace models (`sentence-transformers/all-MiniLM-L6-v2`).
+* **Vector Stores**: Dense semantic indexing and search using **FAISS** and **ChromaDB**.
 
-### 2. `langchain_langgraph/`
-- **Comprehensive Guide & Links**: Check out [`langchain_langgraph/README.md`](./langchain_langgraph/README.md) for direct notebook access.
-- **Data Ingestion & Splitting**: PDF, text, web scraping (`WebBaseLoader`), and Wikipedia loading coupled with recursive character text chunking.
-- **Embeddings & FAISS**: Open-source HuggingFace Sentence Transformers with local FAISS persistence and vector similarity retrieval.
-- **LangGraph Checkpointing & Groq**: Chat Groq setup with `langgraph.checkpoint.memory.MemorySaver` thread configurations.
-- **End-to-End RAG Project (Section 6)**: Production RAG pipeline chaining Groq LLM, FAISS retriever, ChatPromptTemplate, and StrOutputParser.
+### 2. End-to-End RAG & LCEL (`langchain_langgraph/`)
+* **RAG Pipeline (Section 6)**: Production Question-Answering system connecting Groq LLM, FAISS retriever, and structured prompt templates.
+* **Modern LCEL (Section 7)**: Declarative pipeline construction with Unix-style pipe syntax (`prompt | model | parser`), supporting streaming, batching, and async operations.
+* **State Checkpointing**: Thread management using `langgraph.checkpoint.memory.MemorySaver`.
+* 👉 Check out [`langchain_langgraph/README.md`](./langchain_langgraph/README.md) for full module documentation.
 
-### 3. `langraphproject/`
-- **LangGraph StateGraph**: Cyclic and stateful agent architecture using `TypedDict` for shared state management.
-- **Node & Edge Routing**: Connecting graph nodes via direct edges and conditional edges.
-- **Dynamic Model Initialization**: Model provider switching with `init_chat_model(model='openai/gpt-oss-20b', model_provider='groq')`.
-- **Observability**: Full tracing, latency monitoring, and token debugging using **LangSmith**.
+### 3. Agentic Systems with LangGraph (`langraphproject/`)
+* **StateGraph Architecture**: Cyclic graphs with shared `TypedDict` state schemas.
+* **Routing**: Dynamic branch execution using conditional edges and function tools.
+* **Model Dynamic Initialization**: Provider switching with `init_chat_model()`.
+* **Observability**: Production monitoring, latency tracing, and token tracking with **LangSmith**.
 
-### 4. `practice/`
-- **FastAPI & LangServe**: Exposing LangChain chains as RESTful endpoints with automatic OpenAPI documentation and interactive playground (`/rag_chain/playground`).
-- **Encoding & Compatibility**: Handling Windows UTF-8 encoding issues gracefully during server boot.
+### 4. Advanced LangChain Features (`project/`)
+* **Structured Output**: Extracting schema-validated JSON directly into Pydantic models with `.with_structured_output()`.
+* **Custom Tools**: Equipping agents with external execution capabilities via `@tool` decorators.
+* **Lifecycle Callbacks**: Custom middleware handlers (`BaseCallbackHandler`) intercepting `on_llm_start`, `on_llm_end`, and `on_llm_error`.
 
-### 5. `project/` & `project/project_1/`
-- **LCEL Composition**: Creating declarative pipelines using the pipe operator (`prompt | model | parser`).
-- **Structured Output**: Extracting structured data directly into Pydantic models.
-- **Tool Calling**: Equipping models with external tools via `@tool` decorators.
-- **Middleware & Callbacks**: Implementing `BaseCallbackHandler` to intercept execution hooks (`on_llm_start`, `on_llm_end`, `on_llm_error`).
+### 5. API Serving & Deployment (`practice/`)
+* **FastAPI + LangServe**: Exposing LCEL chains as production REST endpoints with automated OpenAPI docs and interactive web playgrounds (`/rag_chain/playground`).
+* **Platform Hardening**: Windows UTF-8 command-line encoding resolutions for seamless server boots.
+
+### 6. Machine Learning Foundations (`Machine_learning/`)
+* **Statistics & EDA**: Univariate/multivariate analysis, correlation matrices, and distribution analysis with Pandas and Seaborn.
+* **Data Preparation**: Label encoding, one-hot encoding, and outlier filtering using IQR and Z-scores.
+* **Regression Modeling**: Simple and Multiple Linear Regression implementations from scratch and using Scikit-Learn.
+* 👉 Check out [`Machine_learning/README.md`](./Machine_learning/README.md) for full syllabus breakdown.
 
 ---
 
-## ⚙️ Quick Start
+## ⚡ Quick Start & Setup
 
-### 1. Clone & Setup Environment
+### 1. Clone Repository
 ```bash
-# Clone the repository
 git clone https://github.com/MohitPayasi/mohit_payasi.git
 cd mohit_payasi
-
-# Create virtual environment
-python -m venv venv
-venv\Scripts\activate   # On Windows
-# source venv/bin/activate # On Linux/macOS
 ```
 
-### 2. Install Dependencies
+### 2. Create Virtual Environment
 ```bash
-pip install -r 1-langchain_basic/requirement.txt
-# or for langgraph project
-pip install -r langraphproject/requirements.txt
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
+
+# Linux / macOS
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### 3. Environment Variables
-Create a `.env` file in the relevant folder with your credentials:
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🔑 Environment Variables
+
+Copy the provided [`.env.example`](./.env.example) to `.env` and configure your API credentials:
+
+```bash
+cp .env.example .env
+```
+
+Key variables required:
 ```env
 GROQ_API_KEY=your_groq_api_key
+GOOGLE_API_KEY=your_google_gemini_key
 OPENAI_API_KEY=your_openai_api_key
-GOOGLE_API_KEY=your_google_api_key
+HF_TOKEN=your_huggingface_token
 LANGCHAIN_API_KEY=your_langsmith_api_key
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=your_project_name
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+| :--- | :--- |
+| **LLM Orchestration** | LangChain, LangGraph, LCEL, LangServe |
+| **Model Providers** | Groq (Llama 3, Mixtral), Google Gemini, OpenAI, Ollama |
+| **Embeddings & Vector Stores** | HuggingFace Sentence Transformers, FAISS, ChromaDB |
+| **Backend & Serving** | FastAPI, Uvicorn, Pydantic |
+| **Data Science & ML** | Scikit-Learn, NumPy, Pandas, Matplotlib, Seaborn, SciPy |
+| **Monitoring & Tracing** | LangSmith |
 
 ---
 
 ## 👤 Author
-- **Mohit Payasi**
-- GitHub: [@MohitPayasi](https://github.com/MohitPayasi)
+
+**Mohit Payasi**
+* GitHub: [@MohitPayasi](https://github.com/MohitPayasi)
+* Repository: [mohit_payasi](https://github.com/MohitPayasi/mohit_payasi)
